@@ -4,6 +4,7 @@ pushd "%~dp0\.."
 set "PARENTDIR=%CD%"
 popd
 
+set "CONFIG_FILE=config.json"
 set LOGFILE="%PARENTDIR%\.debug\build.log"
 set OUTDIR="%PARENTDIR%\.debug"
 
@@ -14,6 +15,10 @@ set UCRT="C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt"
 set MPI_LIB_64="C:\Program Files (x86)\Microsoft SDKs\MPI\Lib\x64"
 set MSVC_LIB_64="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\lib\x64"
 set UCRT_64="C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\ucrt\x64"
+
+if not exist "%CONFIG_FILE%" (
+    echo { "NumberOfProcesses": 4 } > "%CONFIG_FILE%"
+)
 
 if not exist %OUTDIR% (
     mkdir %OUTDIR%
