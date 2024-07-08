@@ -1,0 +1,85 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build MPI Program",
+            "type": "shell",
+            "command": "cmd.exe",
+            "args": [
+                "/c",
+                "cls && .core\\build.bat .debug\\main.exe main.cpp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true,
+                "showReuseMessage": false,
+            },
+            "problemMatcher": [],
+            "dependsOn": []
+        },
+        {
+            "label": "Run MPI Program",
+            "type": "shell",
+            "command": "cmd.exe",
+            "args": [
+                "/c",
+                "cd .core && run.bat"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true,
+                "showReuseMessage": false,
+            },
+            "problemMatcher": [],
+        },
+        {
+            "label": "Build & Run MPI Program",
+            "type": "shell",
+            "command": "cmd.exe",
+            "args": [
+                "/c",
+                "cd .core && run.bat"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "showReuseMessage": false,
+            },
+            "problemMatcher": [],
+            "dependsOn": ["Build MPI Program"]
+        },
+        {
+            "label": "Clean Program Created Files",
+            "type": "shell",
+            "command": "cmd.exe",
+            "args": [
+                "/c",
+                "cd .core && clean.bat"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true,
+                "showReuseMessage": false,
+            },
+        },
+    ]
+}
