@@ -26,15 +26,3 @@ This repository contains a simple MPI program using Visual Studio 2022 for compi
     build.bat .debug\main.exe main.cpp
     run.bat
     ```
-
-Folder Structure:
-
-├── .core
-│   ├── build.bat
-│   ├── clean.bat
-│   └── run.bat
-├── .vscode
-│   ├── c_cpp_properties.json
-│   ├── tasks.json
-├── main.cpp
-└── README.md
